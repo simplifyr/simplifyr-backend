@@ -13,7 +13,7 @@ var REDIS_CLIENT = redis.createClient({
 
 REDIS_CLIENT.on("connect", function () {});
 
-AWS.config.loadFromPath(process.env.AWS_CONFIG_PATH);
+//AWS.config.loadFromPath(process.env.AWS_CONFIG_PATH);
 
 global.AWS = AWS;
 global.REDIS_CLIENT = REDIS_CLIENT;
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.text({limit: '50mb'}));
-app.use(express.static(process.env.NODE_ENV ? './public' : '../simplifier/public'));
+app.use(express.static(process.env.NODE_ENV ? './public' : '../simplifyr/public'));
 
 app.use(fileUpload());
 
