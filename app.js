@@ -39,5 +39,11 @@ app.use('/api', redisRouter);
 app.use('/run', autorun);
 app.use('/result', resultRouter);
 
+app.use('/ping', (req, res) => {
+    res.json({
+        msg: 'PONG'
+    });
+});
+
 
 module.exports = app;
