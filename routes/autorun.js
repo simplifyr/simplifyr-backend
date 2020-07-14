@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/teams/:team/automation/:testsuiteId/', function(req, res) {
     var now = new Date().getTime();
-    var resultURL = (req.protocol + process.env.NODE_ENV ? 's' : ''  + '://' + req.get('host') + '/result' + req.path.replace(/\/$/, '') + '/?' + now);
+    var resultURL = (req.protocol + (process.env.NODE_ENV ? 's' : '')  + '://' + req.get('host') + '/result' + req.path.replace(/\/$/, '') + '/?' + now);
     var redisId = 'auto::' + req.params.team + '::' + req.params.testsuiteId.replace(/\s+/g, '-');
     global.REDIS_CLIENT.get(redisId, (err, testsuite) => {
         //console.log(testsuite);
