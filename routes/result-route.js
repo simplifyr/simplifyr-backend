@@ -63,7 +63,7 @@ const index = `<!DOCTYPE html>
 
 	<title>SimplifyR: __TITLE__</title>
 
-	<link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='icon' id="site-icon" type='image/png' href='/favicon.png'>
 	<link rel='stylesheet' href='/global.css'>
 	<link rel='stylesheet' href='/build/bundle.css'>
 	<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
