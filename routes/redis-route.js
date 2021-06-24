@@ -32,6 +32,13 @@ router.get('/teams/:team/testsuites/', function (req, res) {
     });
 });
 
+
+router.get('/teams/:team/auths/', function (req, res) {
+    scanner.scan('auth::' + req.params.team + '::*', (err, auths) => {
+        res.json(auths);
+    });
+});
+
 //Get test suite for a test suite id
 router.get('/teams/:team/testsuites/:testsuiteId', function (req, res) {
     global.REDIS_CLIENT.get(req.params.testsuiteId, (err, testsuite) => {

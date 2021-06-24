@@ -45,5 +45,14 @@ app.use('/ping', (req, res) => {
     });
 });
 
+app.post('/token', function (req, res) {
+  res.json({
+    access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDY1ODRiN2Y5YzU1Y2JjMDAyZGM0MzYiLCJ1c2VybmFtZSI6ImtyeXB0b24iLCJuYW1lIjoiSmFtZXMgR29zbGluZyIsInVzZXJUeXBlIjoiZmMiLCJpbnN0aXR1dGUiOnsiY29kZSI6ImRyYWMiLCJ0eXBlIjoiY2xnIiwibmFtZSI6IkRSQSBDb2xsZWdlIn0sInNob3J0TmFtZSI6IktSIiwiYWNjZXNzIjp0cnVlLCJsYXN0TG9naW4iOjE2MjQwMjg1ODkyMzUsImlhdCI6MTYyNDM1ODIyMywiZXhwIjoxNjI0MzY5MDIzLCJzdWIiOiJjem4tYXV0aCJ9.F-EAZ4Hz56x4E4YWxCHX1Um3Uio7-cfCjv1OUyUhFek',
+    expires_in: 7199,
+    scope: 'read write',
+    token_type: 'bearer'
+  });
+});
+
 
 module.exports = app;
